@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-
+import img from './img/image 92.jpg'
 import Footer from './Footer';
 
 import './sizes.css';
 import Header from './Header'
 export default function Womens() {
+    const [selectedButton, setSelectedButton] = useState(null);
 
+    // Define a function to handle button clicks
+    const handleButtonClick = (button) => {
+        setSelectedButton(button);
+    };
 
     return (
         <>
@@ -18,39 +23,62 @@ export default function Womens() {
                     <div className='rectangle'>
 
                         <div className='rectangle1'>
-                            <button className='rectangletxt1'>
+                        <div className='rectangletxt1'>
+                            <div className={selectedButton === 'rectangletxt1' ? 'black' : ''}
+                                onClick={() => handleButtonClick('rectangletxt1')}>
                                 XS
-                            </button>
+                            </div>
+                        </div>
 
 
-                            <button className='rectangletxt1'>
+                        <div className='rectangletxt2'>
+                            <div className={selectedButton === 'rectangletxt2' ? 'black' : ''}
+                                onClick={() => handleButtonClick('rectangletxt2')}>
                                 S
-                            </button>
+                            </div>
+                        </div>
 
 
-                            <button className='rectangletxt1'>
+                        <div className='rectangletxt3'>
+                            <div className={selectedButton === 'rectangletxt3' ? 'black' : ''}
+                                onClick={() => handleButtonClick('rectangletxt3')}>
                                 M
-                            </button>
-                            <button className='rectangletxt1'>
+                            </div>
+                        </div>
+                        <div className='rectangletxt4'>
+                            <div className={selectedButton === 'rectangletxt4' ? 'black' : ''}
+                                onClick={() => handleButtonClick('rectangletxt4')}>
                                 L
-                            </button>
+                            </div>
+                        </div>
                         </div>
                         <div className='rectangle2'>
-                            <button className='rectangletxt1'>
+                        <div className='rectangletxt5'>
+                            <div className={selectedButton === 'rectangletxt5' ? 'black' : ''}
+                                onClick={() => handleButtonClick('rectangletxt5')}>
                                 XL
-                            </button>
-                            <button className='rectangletxt1'>
+                            </div>
+                        </div>
+                        <div className='rectangletxt6'>
+                            <div className={selectedButton === 'rectangletxt6' ? 'black' : ''}
+                                onClick={() => handleButtonClick('rectangletxt6')}>
                                 2XL
-                            </button>
-                            <button className='rectangletxt1'>
+                            </div>
+                        </div>
+                        <div className='rectangletxt7'>
+                            <div className={selectedButton === 'rectangletxt7' ? 'black' : ''}
+                                onClick={() => handleButtonClick('rectangletxt7')}>
                                 3XL
-                            </button>
+                            </div>
+                        </div>
                         </div>
 
 
                     </div>
                 </div>
             </div>
+            <div className='size1'>Size Chart</div>
+            <img className='chart' src={img}/>
             <Footer />
         </>
     )
